@@ -1,0 +1,26 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+
+contract Token_Owner {
+    string public token_name = "Sidharth";
+    string public token_abbr = "sid";
+    uint public total_sum = 0;
+
+    mapping (address => uint) public balances;
+
+    function mint (address add, uint val) public {
+        total_sum += val;
+        balances[add] += val;
+    }
+
+
+    function burn (address add, uint val) public {
+        if (total_sum < val || balances[add] < val) {
+        
+     } else {
+        total_sum -= val;  
+        balances[add] -= val; 
+            
+     }
+    }
+}
